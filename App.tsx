@@ -81,28 +81,28 @@ const projectData: Project[] = [
     description: "A RAG-based system on AWS to provide accurate, context-aware answers for ESG compliance reporting, leveraging large language models.",
     tags: ["Python", "LangChain", "AWS Lambda", "Amazon Bedrock", "RAG", "OpenSearch"],
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e28f81?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/gautammarathe"
+    repoUrl: "https://github.com/16ghosty/Bond-Pricing-Model-using-ESG"
   },
   {
     title: "Robotic Arm Predictive Maintenance",
     description: "A model to forecast component failures in robotic arms, reducing downtime by 15% through proactive maintenance.",
     tags: ["Python", "Scikit-learn", "Amazon SageMaker", "Tableau", "Pandas"],
     imageUrl: "https://images.unsplash.com/photo-1599688691834-3011a6815344?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/gautammarathe"
+    repoUrl: "https://github.com/16ghosty/Manufacturing-Classification-Model"
   },
   {
     title: "Customer Behavior Prediction Engine",
     description: "ML models improving prediction accuracy by 15% using Random Forest and Gradient Boosting, deployed as a scalable microservice.",
     tags: ["Python", "Gradient Boosting", "AWS Lambda", "ECR", "FastAPI"],
     imageUrl: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/gautammarathe"
+    repoUrl: "https://github.com/16ghosty"
   },
   {
     title: "NLP-Powered Policy Violation Detection",
     description: "An NLP pipeline achieving a 94% F1-score in identifying policy violations from user-generated content for risk management.",
     tags: ["Python", "NLP", "A/B Testing", "Azure Data Factory", "Apache Airflow"],
     imageUrl: "https://images.unsplash.com/photo-1516116216624-53e6973bea1c?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/gautammarathe"
+    repoUrl: "https://github.com/16ghosty/Sentiment-Analysis"
   }
 ];
 
