@@ -13,7 +13,7 @@ const contactData: ContactInfo = {
   phone: "774-503-9995",
   email: "gautammarathe11@gmail.com",
   linkedin: "https://linkedin.com/in/gautammarathe/",
-  github: "https://github.com/gautammarathe"
+  github: "https://github.com/16ghosty"
 };
 
 const timelineData: TimelineItem[] = [
@@ -123,30 +123,19 @@ const navLinks = [
 ];
 
 const Intro: React.FC = () => {
-  const [style, setStyle] = useState({ opacity: 1, transform: 'scale(1)' });
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const fadeEnd = window.innerHeight * 0.75;
-
-      if (scrollY < fadeEnd) {
-        const opacity = Math.max(0, 1 - scrollY / fadeEnd);
-        const scale = Math.max(0.9, 1 - scrollY / (fadeEnd * 2.5));
-        setStyle({ opacity, transform: `scale(${scale})` });
-      } else {
-        setStyle({ opacity: 0, transform: 'scale(0.9)' });
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div style={{ ...style, pointerEvents: style.opacity === 0 ? 'none' : 'auto' }} className="h-screen sticky top-0 flex flex-col items-center justify-center text-center px-4 z-20">
-      <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300">Gautam Marathe</h1>
-      <p className="text-xl sm:text-2xl font-normal text-slate-300 mt-4 transition-all duration-300">Crafting Intelligent Solutions from Complex Data.</p>
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-nb-yellow">
+      <div className="bg-white border-4 border-nb-black shadow-brutal-lg p-8 sm:p-12 max-w-3xl">
+        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-nb-black tracking-tight">
+          Gautam Marathe
+        </h1>
+        <p className="text-xl sm:text-2xl font-medium text-nb-black mt-6 border-t-4 border-nb-black pt-6">
+          Crafting Intelligent Solutions from Complex Data.
+        </p>
+      </div>
+      <div className="mt-8 animate-bounce">
+        <span className="text-4xl">↓</span>
+      </div>
     </div>
   );
 };
@@ -185,45 +174,32 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="bg-slate-900 text-slate-300 font-sans">
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="relative h-full w-full animate-aurora">
-          <div className="absolute top-0 left-0 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-teal-500/30 to-slate-900 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 h-[50rem] w-[50rem] translate-x-1/3 translate-y-1/3 rounded-full bg-gradient-to-br from-cyan-500/20 to-slate-900 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 h-[30rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-purple-500/20 to-slate-900 blur-3xl"></div>
-        </div>
-      </div>
+    <div className="bg-nb-cream text-nb-black font-sans">
+      <Intro />
+      <div className="bg-nb-cream">
+        <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+          <div className="lg:flex lg:justify-between lg:gap-8">
+            <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+              <Header contact={contactData} navLinks={navLinks} activeId={activeId} />
+            </header>
 
-      <div className="relative z-10">
-        <Intro />
-        <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl">
-          <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
-            <div className="lg:flex lg:justify-between lg:gap-4">
-              <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-                <Header contact={contactData} navLinks={navLinks} activeId={activeId} />
-              </header>
+            <main className="pt-24 lg:w-1/2 lg:py-24">
+              <Section title="Projects" id="projects" ref={(el) => { sectionRefs.current[0] = el; }}>
+                <Projects projects={projectData} />
+              </Section>
 
-              <main className="pt-24 lg:w-1/2 lg:py-24">
-                {/* FIX: The ref callback must not return a value. Changed from a concise arrow function body to a block body to ensure a void return type. */}
-                <Section title="Projects" id="projects" ref={(el) => { sectionRefs.current[0] = el; }}>
-                  <Projects projects={projectData} />
-                </Section>
+              <Section title="Career & Education" id="career" ref={(el) => { sectionRefs.current[1] = el; }}>
+                <Timeline items={timelineData} />
+              </Section>
 
-                {/* FIX: The ref callback must not return a value. Changed from a concise arrow function body to a block body to ensure a void return type. */}
-                <Section title="Career & Education" id="career" ref={(el) => { sectionRefs.current[1] = el; }}>
-                  <Timeline items={timelineData} />
-                </Section>
+              <Section title="Technical Skills" id="skills" ref={(el) => { sectionRefs.current[2] = el; }}>
+                <SkillsList skills={skillsData} />
+              </Section>
 
-                {/* FIX: The ref callback must not return a value. Changed from a concise arrow function body to a block body to ensure a void return type. */}
-                <Section title="Technical Skills" id="skills" ref={(el) => { sectionRefs.current[2] = el; }}>
-                  <SkillsList skills={skillsData} />
-                </Section>
-
-                <footer className="text-center text-slate-500 my-16">
-                  <p>&copy; {new Date().getFullYear()} Gautam Marathe. All Rights Reserved.</p>
-                </footer>
-              </main>
-            </div>
+              <footer className="text-center text-nb-black my-16 border-t-4 border-nb-black pt-8">
+                <p className="font-bold">&copy; {new Date().getFullYear()} Gautam Marathe. All Rights Reserved.</p>
+              </footer>
+            </main>
           </div>
         </div>
       </div>

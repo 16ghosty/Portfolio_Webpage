@@ -28,35 +28,34 @@ const useIntersectionObserver = (options: IntersectionObserverInit) => {
   return [ref, isIntersecting] as const;
 };
 
+const markerColors = ['bg-nb-yellow', 'bg-nb-pink', 'bg-nb-blue', 'bg-nb-green'];
 
-const TimelineItem: React.FC<{ item: TimelineItemProps, isLast: boolean }> = ({ item, isLast }) => {
+const TimelineItem: React.FC<{ item: TimelineItemProps, isLast: boolean, index: number }> = ({ item, isLast, index }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const markerColor = markerColors[index % markerColors.length];
 
   return (
-    <div 
+    <div
       ref={ref}
-      className={`group relative flex gap-6 sm:gap-8 transition-all duration-700 ease-in-out p-4 rounded-md -mx-4 hover:bg-slate-800/50 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+      className={`relative flex gap-6 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      {/* Date */}
-      <div className="hidden sm:flex flex-col items-end w-28 text-sm font-medium text-slate-500 flex-shrink-0 pt-1">
-        {item.date}
+      {/* Timeline line and marker */}
+      <div className="flex flex-col items-center">
+        <div className={`w-5 h-5 ${markerColor} border-3 border-nb-black flex-shrink-0`}></div>
+        {!isLast && <div className="w-1 flex-grow bg-nb-black"></div>}
       </div>
-
-      {/* Line and Dot */}
-      <div className="absolute left-8 sm:left-[128px] top-2 bottom-0 w-px bg-slate-700">
-        {!isLast && <div className="h-full w-full bg-slate-700"></div>}
-      </div>
-      <div className="absolute left-[26.5px] sm:left-[121px] top-1.5 h-3.5 w-3.5 rounded-full bg-gradient-to-br from-teal-400 to-cyan-400"></div>
-
 
       {/* Content */}
-      <div className="flex-grow pl-12 sm:pl-0">
-         <div className="sm:hidden text-sm font-medium uppercase text-slate-500 tracking-wider mb-2">{item.date}</div>
-        <h3 className="font-bold text-lg text-white group-hover:text-teal-400 transition-colors">{item.title} &middot; <span className="font-semibold text-md text-slate-300">{item.subtitle}</span></h3>
-        <p className="text-xs text-slate-400 mt-1 mb-3">{item.location}</p>
-        <p className="text-slate-400 text-sm leading-relaxed">
-          {item.summary}
-        </p>
+      <div className="pb-8 flex-grow">
+        <div className="bg-white border-3 border-nb-black shadow-brutal p-4 hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+          <div className="bg-nb-yellow inline-block px-2 py-1 border-2 border-nb-black text-sm font-bold mb-2">
+            {item.date}
+          </div>
+          <h3 className="font-bold text-lg text-nb-black">{item.title}</h3>
+          <p className="font-bold text-nb-black">{item.subtitle}</p>
+          <p className="text-sm text-nb-black mt-1">{item.location}</p>
+          <p className="text-nb-black mt-3">{item.summary}</p>
+        </div>
       </div>
     </div>
   );
@@ -70,7 +69,7 @@ const Timeline: React.FC<TimelineProps> = ({ items }) => {
   return (
     <div className="relative">
       {items.map((item, index) => (
-        <TimelineItem key={index} item={item} isLast={index === items.length - 1} />
+        <TimelineItem key={index} item={item} isLast={index === items.length - 1} index={index} />
       ))}
     </div>
   );
