@@ -28,6 +28,13 @@ const projectData: Project[] = [
     repoUrl: "https://github.com/16ghosty/Bond-Pricing-Model-using-ESG"
   },
   {
+    title: "CAPM Portfolio Model",
+    description: "CAPM-based trading strategy that turned $10k to $1.09M over 6 years using robust linear modeling.",
+    tags: ["Python", "Finance", "CAPM", "Backtesting"],
+    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty/CAPM-Portfolio-Balancing-Model"
+  },
+  {
     title: "Predictive Maintenance",
     description: "ML model forecasting robotic arm failures, reducing downtime 15%.",
     tags: ["Python", "SageMaker", "Tableau"],
@@ -50,6 +57,7 @@ const projectData: Project[] = [
   }
 ];
 
+
 const skillCategories = [
   { name: "ML & AI", skills: ["TensorFlow", "PyTorch", "Scikit-learn", "LLMs", "NLP"], color: "bg-nb-yellow" },
   { name: "Languages", skills: ["Python", "R", "SQL", "Go", "Java"], color: "bg-nb-blue" },
@@ -68,12 +76,60 @@ const Hero: React.FC = () => (
     <div className="absolute bottom-48 left-52 w-14 h-14 bg-nb-purple border-4 border-nb-black rotate-6 shadow-brutal"></div>
     <div className="absolute top-1/2 right-8 w-12 h-12 bg-nb-orange border-4 border-nb-black -rotate-45 shadow-brutal hidden lg:block"></div>
 
-    {/* Floating skill badges - decorative */}
-    <div className="absolute top-24 left-8 bg-nb-black text-white px-3 py-1 border-3 border-nb-black font-bold text-sm rotate-[-8deg] shadow-brutal hidden lg:block">Python</div>
-    <div className="absolute top-40 left-24 bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm rotate-[4deg] shadow-brutal hidden lg:block">AWS</div>
-    <div className="absolute bottom-64 right-16 bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm rotate-[-5deg] shadow-brutal hidden lg:block">ML</div>
-    <div className="absolute bottom-80 right-40 bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm rotate-[8deg] shadow-brutal hidden lg:block">NLP</div>
-    <div className="absolute top-48 right-64 bg-nb-green px-3 py-1 border-3 border-nb-black font-bold text-sm rotate-[-3deg] shadow-brutal hidden xl:block">TensorFlow</div>
+    {/* Animated flowing skill badges */}
+    <style>{`
+      @keyframes flowOut1 { 
+        0% { transform: translate(0, 0) rotate(-5deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(-200px, -150px) rotate(15deg); opacity: 0; }
+      }
+      @keyframes flowOut2 { 
+        0% { transform: translate(0, 0) rotate(5deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(-250px, 100px) rotate(-10deg); opacity: 0; }
+      }
+      @keyframes flowOut3 { 
+        0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(200px, -200px) rotate(20deg); opacity: 0; }
+      }
+      @keyframes flowOut4 { 
+        0% { transform: translate(0, 0) rotate(-3deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(180px, 150px) rotate(-15deg); opacity: 0; }
+      }
+      @keyframes flowOut5 { 
+        0% { transform: translate(0, 0) rotate(8deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(-150px, 200px) rotate(25deg); opacity: 0; }
+      }
+      @keyframes flowOut6 { 
+        0% { transform: translate(0, 0) rotate(-10deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(250px, -100px) rotate(-20deg); opacity: 0; }
+      }
+      .flow-skill { animation-iteration-count: infinite; animation-timing-function: ease-out; }
+    `}</style>
+
+    {/* Skills flowing from title area */}
+    <div className="absolute top-[35%] left-[20%] bg-nb-black text-white px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut1 4s infinite' }}>Python</div>
+    <div className="absolute top-[40%] left-[25%] bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut2 5s infinite 0.5s' }}>AWS</div>
+    <div className="absolute top-[35%] left-[30%] bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut3 4.5s infinite 1s' }}>TensorFlow</div>
+    <div className="absolute top-[45%] left-[22%] bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut4 5.5s infinite 1.5s' }}>SQL</div>
+    <div className="absolute top-[38%] left-[28%] bg-nb-green px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut5 4.2s infinite 2s' }}>PyTorch</div>
+    <div className="absolute top-[42%] left-[18%] bg-nb-purple px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut6 5.2s infinite 2.5s' }}>NLP</div>
+
+    {/* Skills flowing from card area */}
+    <div className="absolute top-[35%] right-[15%] bg-nb-orange px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut3 4.8s infinite 0.3s' }}>ML</div>
+    <div className="absolute top-[42%] right-[20%] bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut4 5.3s infinite 0.8s' }}>Docker</div>
+    <div className="absolute top-[38%] right-[12%] bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut1 4.6s infinite 1.3s' }}>LLMs</div>
+    <div className="absolute top-[45%] right-[18%] bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut2 5.1s infinite 1.8s' }}>RAG</div>
 
 
     {/* Main content */}
@@ -143,7 +199,7 @@ const ProjectsSection: React.FC = () => (
       <div className="flex items-center gap-4 mb-12">
         <h2 className="text-4xl md:text-6xl font-bold text-nb-black">PROJECTS</h2>
         <div className="flex-grow h-1 bg-nb-black"></div>
-        <span className="text-2xl font-bold">04</span>
+        <span className="text-2xl font-bold">05</span>
       </div>
 
       {/* Bento Grid Layout */}
