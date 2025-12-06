@@ -28,6 +28,13 @@ const projectData: Project[] = [
     repoUrl: "https://github.com/16ghosty/Bond-Pricing-Model-using-ESG"
   },
   {
+    title: "CAPM Portfolio Model",
+    description: "CAPM-based trading strategy that turned $10k to $1.09M over 6 years using robust linear modeling.",
+    tags: ["Python", "Finance", "CAPM", "Backtesting"],
+    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty/CAPM-Portfolio-Balancing-Model"
+  },
+  {
     title: "Predictive Maintenance",
     description: "ML model forecasting robotic arm failures, reducing downtime 15%.",
     tags: ["Python", "SageMaker", "Tableau"],
@@ -49,6 +56,7 @@ const projectData: Project[] = [
     repoUrl: "https://github.com/16ghosty/Sentiment-Analysis"
   }
 ];
+
 
 const skillCategories = [
   { name: "ML & AI", skills: ["TensorFlow", "PyTorch", "Scikit-learn", "LLMs", "NLP"], color: "bg-nb-yellow" },
@@ -191,7 +199,7 @@ const ProjectsSection: React.FC = () => (
       <div className="flex items-center gap-4 mb-12">
         <h2 className="text-4xl md:text-6xl font-bold text-nb-black">PROJECTS</h2>
         <div className="flex-grow h-1 bg-nb-black"></div>
-        <span className="text-2xl font-bold">04</span>
+        <span className="text-2xl font-bold">05</span>
       </div>
 
       {/* Bento Grid Layout */}
