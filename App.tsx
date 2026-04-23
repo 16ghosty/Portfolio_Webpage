@@ -426,14 +426,26 @@ const ExperienceSection: React.FC = () => (
       </div>
 
       {/* Education highlight */}
-      <div className="mt-12 bg-nb-purple border-4 border-nb-black shadow-brutal-lg p-8 transform -rotate-1 hover:rotate-0 transition-transform">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <span className="bg-white px-3 py-1 border-2 border-nb-black text-sm font-bold">EDUCATION</span>
-            <h3 className="text-3xl font-bold text-nb-black mt-4">University of Massachusetts</h3>
-            <p className="text-xl text-nb-black">Master's in Data Science • GPA 4.0</p>
+      <div className="mt-12 grid md:grid-cols-2 gap-6">
+        <div className="bg-nb-purple border-4 border-nb-black shadow-brutal-lg p-8 transform -rotate-1 hover:rotate-0 transition-transform">
+          <div className="flex flex-col h-full justify-between gap-4">
+            <div>
+              <span className="bg-white px-3 py-1 border-2 border-nb-black text-sm font-bold">EDUCATION</span>
+              <h3 className="text-2xl font-bold text-nb-black mt-4">University of Massachusetts</h3>
+              <p className="text-lg text-nb-black">Master's in Data Science • GPA 4.0</p>
+            </div>
+            <div className="text-5xl font-bold text-nb-black">2025</div>
           </div>
-          <div className="text-6xl font-bold text-nb-black">2025</div>
+        </div>
+        <div className="bg-nb-blue border-4 border-nb-black shadow-brutal-lg p-8 transform rotate-1 hover:rotate-0 transition-transform">
+          <div className="flex flex-col h-full justify-between gap-4">
+            <div>
+              <span className="bg-white px-3 py-1 border-2 border-nb-black text-sm font-bold">EDUCATION</span>
+              <h3 className="text-2xl font-bold text-nb-black mt-4">Manipal Institute of Technology</h3>
+              <p className="text-lg text-nb-black">B.Tech in Mechanical Engineering • GPA 3.9</p>
+            </div>
+            <div className="text-5xl font-bold text-nb-black">2022</div>
+          </div>
         </div>
       </div>
     </div>
