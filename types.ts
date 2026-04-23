@@ -13,6 +13,7 @@ export interface TimelineItem {
   date: string;
   location: string;
   summary: string;
+  isIntern?: boolean;
 }
 
 export interface Project {

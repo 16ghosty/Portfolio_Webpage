@@ -12,18 +12,84 @@ const contactData: ContactInfo = {
 };
 
 const experienceData: TimelineItem[] = [
-  { title: "LOCOMex", subtitle: "Data Scientist", date: "2025 - Current", location: "NYC", summary: "ML model development for customer behavior prediction" },
-  { title: "Walmart Robotics", subtitle: "Data Science Intern", date: "2024", location: "MA", summary: "Predictive maintenance achieving 85% accuracy" },
-  { title: "Credit Suisse", subtitle: "Data Scientist", date: "2022 - 2023", location: "India", summary: "NLP pipelines and risk models" },
-  { title: "Goldman Sachs", subtitle: "STEM Intern", date: "2022", location: "India", summary: "Market trend analysis dashboards" },
+  {
+    title: "LOCOMex",
+    subtitle: "SWE · ML",
+    date: "2025 – Current",
+    location: "NYC",
+    summary: "• Built customer behavior prediction microservices using Gradient Boosting models deployed via FastAPI on AWS Lambda\n• Engineered ML training and deployment pipelines with MLflow versioning and ECR containerization\n• Developed backend data ingestion and feature engineering layers feeding live prediction endpoints"
+  },
+  {
+    title: "Walmart Robotics",
+    subtitle: "Hardware Support Eng.",
+    isIntern: true,
+    date: "May 2024 – Sep 2024",
+    location: "MA",
+    summary: "• Root-caused docking failures across 12+ fulfillment centers through hardware inspection and sensor log analysis\n• Built PySpark sensor data pipelines processing 500GB+ daily; identified charge toe wear patterns causing 43% of failures\n• Supported SolidWorks redesign of robotic charge toe component validated with Ansys FEA"
+  },
+  {
+    title: "Credit Suisse",
+    subtitle: "SWE · DS (Quant)",
+    date: "2022 – 2023",
+    location: "India",
+    summary: "• Developed NLP pipelines for ESG policy violation detection achieving 94% F1-score on regulatory document corpora\n• Built risk quantification models integrating market signals; reduced compliance review time by 30%\n• Maintained compliance tooling and data pipelines supporting quant research workflows"
+  },
+  {
+    title: "Goldman Sachs",
+    subtitle: "SWE · ML",
+    isIntern: true,
+    date: "2022",
+    location: "India",
+    summary: "• Built market trend analysis dashboards aggregating multi-source financial data for trading desk consumption\n• Conducted EDA on equity signals; surfaced insights used in desk-level strategy reviews"
+  },
+  {
+    title: "Formula Manipal",
+    subtitle: "Vehicle Dynamics Head",
+    date: "2019 – 2022",
+    location: "Manipal, India",
+    summary: "• Led full VD pipeline across 2 Formula SAE builds: concept design, FEA validation, manufacturing, and assembly\n• Designed Ackermann steering geometry achieving -60% steering effort; brake system reduced heat by 27%\n• Managed cross-functional team through two complete build cycles; achieved -17% improvement in lap times"
+  },
+  {
+    title: "Pentagon Automation",
+    subtitle: "Mechanical Design",
+    isIntern: true,
+    date: "2019 – 2020",
+    location: "India",
+    summary: "• Produced CAD models and assembly drawings for industrial automation components using SolidWorks\n• Supported manufacturing and prototyping; gained hands-on exposure to tolerance stack-up and GD&T"
+  },
 ];
 
 const projectData: Project[] = [
   {
+    title: "Formula SAE Vehicle Dynamics System",
+    description: "Designed brakes, suspension, and steering across 2 Formula SAE builds — -60% steering effort, -27% brake heat, -17% lap times. Rack-and-pinion Ackermann geometry + thermal FEA.",
+    tags: ["SolidWorks", "CATIA V5/V6", "Ansys FEA", "FMEA", "Python"],
+    imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'mechanical',
+    videoSrc: '/cad-renders/VehicleDynamics.mp4'
+  },
+  {
+    title: "Predictive Maintenance Platform",
+    description: "End-to-end ML platform: XGBoost training on Kafka streams, MLflow versioning, SageMaker deployment — 18% stockout reduction, drift-triggered Airflow retraining.",
+    tags: ["XGBoost", "SageMaker", "MLflow", "Airflow", "Docker"],
+    imageUrl: "/images/Robotics1.webp",
+    repoUrl: "https://github.com/16ghosty/Manufacturing-Classification-Model",
+    domain: 'robotics'
+  },
+  {
+    title: "Medallion Data Lakehouse",
+    description: "Bronze/Silver/Gold ETL pipelines on S3 — Kafka ingestion, PySpark transforms, Delta Lake storage, dbt + Airflow orchestration, Snowflake analytics.",
+    tags: ["PySpark", "Kafka", "Delta Lake", "Airflow", "dbt", "Snowflake"],
+    imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'data'
+  },
+  {
     title: "ESG Compliance Tool",
     description: "RAG-based system on AWS for ESG compliance reporting using LLMs.",
     tags: ["Python", "LangChain", "AWS", "RAG"],
-    imageUrl: "https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/images/coding1.webp",
     repoUrl: "https://github.com/16ghosty/Bond-Pricing-Model-using-ESG",
     domain: 'ai'
   },
@@ -31,7 +97,7 @@ const projectData: Project[] = [
     title: "LLM Contract Extraction Pipeline",
     description: "Production Claude API pipeline for structured extraction from unstructured contracts — confidence-based routing, PII controls, and schema enforcement.",
     tags: ["Python", "Claude API", "LangChain", "FastAPI", "AWS"],
-    imageUrl: "https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/images/coding2.jpg",
     repoUrl: "https://github.com/16ghosty",
     domain: 'ai'
   },
@@ -44,14 +110,6 @@ const projectData: Project[] = [
     domain: 'ai'
   },
   {
-    title: "Medallion Data Lakehouse",
-    description: "Bronze/Silver/Gold ETL pipelines on S3 — Kafka ingestion, PySpark transforms, Delta Lake storage, dbt + Airflow orchestration, Snowflake analytics.",
-    tags: ["PySpark", "Kafka", "Delta Lake", "Airflow", "dbt", "Snowflake"],
-    imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty",
-    domain: 'data'
-  },
-  {
     title: "CAPM Portfolio Model",
     description: "CAPM-based trading strategy that turned $10k to $1.09M over 6 years using robust linear modeling.",
     tags: ["Python", "Finance", "CAPM", "Backtesting"],
@@ -60,18 +118,10 @@ const projectData: Project[] = [
     domain: 'data'
   },
   {
-    title: "Predictive Maintenance Platform",
-    description: "End-to-end ML platform: XGBoost training on Kafka streams, MLflow versioning, SageMaker deployment — 18% stockout reduction, drift-triggered Airflow retraining.",
-    tags: ["XGBoost", "SageMaker", "MLflow", "Airflow", "Docker"],
-    imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty/Manufacturing-Classification-Model",
-    domain: 'robotics'
-  },
-  {
     title: "Walmart Robotic Charge Toe Redesign",
     description: "Root-caused docking failures across 12+ fulfillment sites. SolidWorks redesign + Ansys FEA cut robot downtime 43%; PySpark pipeline processed 500GB+ daily sensor data.",
     tags: ["SolidWorks", "Ansys FEA", "PySpark", "Apache Kafka", "SQL"],
-    imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/images/Robotics2.webp",
     repoUrl: "https://github.com/16ghosty",
     domain: 'robotics'
   },
@@ -79,19 +129,10 @@ const projectData: Project[] = [
     title: "Customer Prediction Service",
     description: "Gradient Boosting models deployed as scalable microservices with FastAPI, containerized on AWS Lambda + ECR.",
     tags: ["FastAPI", "AWS Lambda", "ECR", "Python"],
-    imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/images/coding2.jpg",
     repoUrl: "https://github.com/16ghosty",
     domain: 'backend'
   },
-  {
-    title: "Formula SAE Vehicle Dynamics System",
-    description: "Designed brakes, suspension, and steering across 2 Formula SAE builds — -60% steering effort, -27% brake heat, -17% lap times. Rack-and-pinion Ackermann geometry + thermal FEA.",
-    tags: ["SolidWorks", "CATIA V5/V6", "Ansys FEA", "FMEA", "Python"],
-    imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty",
-    domain: 'mechanical',
-    videoSrc: '/cad-renders/VehicleDynamics.mp4'
-  }
 ];
 
 
@@ -285,41 +326,69 @@ const ProjectsSection: React.FC = () => {
             <p className="text-2xl font-bold text-nb-black">No projects in this category yet.</p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Featured large card */}
-            <a href={filtered[0].repoUrl} target="_blank" className="group md:col-span-2 lg:row-span-2 bg-white border-4 border-nb-black shadow-brutal-lg hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all overflow-hidden">
-              <div className="h-64 lg:h-80 overflow-hidden border-b-4 border-nb-black">
-                <MediaDisplay project={filtered[0]} className="w-full h-full object-cover" />
+          <div className="space-y-6">
+            {/* Top highlight row — up to 2 large cards side by side */}
+            {filtered.length >= 2 ? (
+              <div className="grid md:grid-cols-2 gap-6">
+                {filtered.slice(0, 2).map((project, i) => (
+                  <a key={i} href={project.repoUrl} target="_blank" className="group bg-white border-4 border-nb-black shadow-brutal-lg hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all overflow-hidden">
+                    <div className="h-56 md:h-72 overflow-hidden border-b-4 border-nb-black">
+                      <MediaDisplay project={project} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-nb-green px-3 py-1 border-2 border-nb-black text-sm font-bold">FEATURED</span>
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-nb-black mb-2">{project.title}</h3>
+                      <p className="text-nb-black mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map(tag => (
+                          <span key={tag} className="bg-nb-cream px-3 py-1 border-2 border-nb-black text-sm font-bold">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </a>
+                ))}
               </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="bg-nb-green px-3 py-1 border-2 border-nb-black text-sm font-bold">FEATURED</span>
+            ) : (
+              <a href={filtered[0].repoUrl} target="_blank" className="group block bg-white border-4 border-nb-black shadow-brutal-lg hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all overflow-hidden">
+                <div className="h-64 overflow-hidden border-b-4 border-nb-black">
+                  <MediaDisplay project={filtered[0]} className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-nb-black mb-2">{filtered[0].title}</h3>
-                <p className="text-nb-black mb-4">{filtered[0].description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {filtered[0].tags.map(tag => (
-                    <span key={tag} className="bg-nb-cream px-3 py-1 border-2 border-nb-black text-sm font-bold">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </a>
-
-            {/* Smaller cards */}
-            {filtered.slice(1).map((project, i) => (
-              <a key={i} href={project.repoUrl} target="_blank" className="group bg-white border-4 border-nb-black shadow-brutal hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all overflow-hidden">
-                <div className="h-40 overflow-hidden border-b-4 border-nb-black">
-                  <MediaDisplay project={project} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-nb-black mb-2">{project.title}</h3>
-                  <p className="text-sm text-nb-black mb-3">{project.description}</p>
-                  <div className="flex items-center gap-2 text-sm font-bold">
-                    <ExternalLinkIcon className="w-4 h-4" /> View →
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-nb-green px-3 py-1 border-2 border-nb-black text-sm font-bold">FEATURED</span>
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-nb-black mb-2">{filtered[0].title}</h3>
+                  <p className="text-nb-black mb-4">{filtered[0].description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {filtered[0].tags.map(tag => (
+                      <span key={tag} className="bg-nb-cream px-3 py-1 border-2 border-nb-black text-sm font-bold">{tag}</span>
+                    ))}
                   </div>
                 </div>
               </a>
-            ))}
+            )}
+
+            {/* Remaining cards — 3-column grid */}
+            {filtered.length > 2 && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filtered.slice(2).map((project, i) => (
+                  <a key={i} href={project.repoUrl} target="_blank" className="group bg-white border-4 border-nb-black shadow-brutal hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all overflow-hidden">
+                    <div className="h-40 overflow-hidden border-b-4 border-nb-black">
+                      <MediaDisplay project={project} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-xl font-bold text-nb-black mb-2">{project.title}</h3>
+                      <p className="text-sm text-nb-black mb-3">{project.description}</p>
+                      <div className="flex items-center gap-2 text-sm font-bold">
+                        <ExternalLinkIcon className="w-4 h-4" /> View →
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -344,14 +413,14 @@ const ExperienceSection: React.FC = () => (
             className={`bg-white border-4 border-nb-black shadow-brutal p-6 ${i % 2 === 1 ? 'md:translate-y-8' : ''}`}
           >
             <div className="flex justify-between items-start mb-4">
-              <span className={`${['bg-nb-yellow', 'bg-nb-blue', 'bg-nb-pink', 'bg-nb-green'][i]} px-3 py-1 border-2 border-nb-black text-sm font-bold`}>
+              <span className={`${['bg-nb-yellow', 'bg-nb-blue', 'bg-nb-pink', 'bg-nb-green', 'bg-nb-orange', 'bg-nb-purple'][i % 6]} px-3 py-1 border-2 border-nb-black text-sm font-bold`}>
                 {exp.date}
               </span>
               <span className="text-sm font-bold text-nb-black">{exp.location}</span>
             </div>
             <h3 className="text-2xl font-bold text-nb-black">{exp.title}</h3>
-            <p className="text-lg font-medium text-nb-black mb-2">{exp.subtitle}</p>
-            <p className="text-nb-black">{exp.summary}</p>
+            <p className="text-lg font-medium text-nb-black mb-2">{exp.subtitle}{exp.isIntern && <em> Intern</em>}</p>
+            <p className="text-nb-black whitespace-pre-line">{exp.summary}</p>
           </div>
         ))}
       </div>
