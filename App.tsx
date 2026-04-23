@@ -4,9 +4,8 @@ import { MailIcon, LinkedInIcon, GithubIcon, ExternalLinkIcon } from './componen
 
 const contactData: ContactInfo = {
   name: "Gautam Marathe",
-  title: "Data Scientist & Machine Learning Engineer",
-  summary: "Building end-to-end ML solutions from data exploration to cloud deployment. Translating complex data into actionable insights.",
-  phone: "774-503-9995",
+  title: "Data Engineer · ML Engineer · Mechanical Engineering",
+  summary: "From PySpark pipelines on AWS to SolidWorks FEA validation — end-to-end ML, data engineering, and robotics hardware across finance, fulfillment robotics, and industrial automation.",
   email: "gautammarathe11@gmail.com",
   linkedin: "https://linkedin.com/in/gautammarathe/",
   github: "https://github.com/16ghosty"
@@ -25,44 +24,83 @@ const projectData: Project[] = [
     description: "RAG-based system on AWS for ESG compliance reporting using LLMs.",
     tags: ["Python", "LangChain", "AWS", "RAG"],
     imageUrl: "https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty/Bond-Pricing-Model-using-ESG"
+    repoUrl: "https://github.com/16ghosty/Bond-Pricing-Model-using-ESG",
+    domain: 'ai'
+  },
+  {
+    title: "LLM Contract Extraction Pipeline",
+    description: "Production Claude API pipeline for structured extraction from unstructured contracts — confidence-based routing, PII controls, and schema enforcement.",
+    tags: ["Python", "Claude API", "LangChain", "FastAPI", "AWS"],
+    imageUrl: "https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'ai'
+  },
+  {
+    title: "NLP Policy Detection",
+    description: "94% F1-score pipeline for policy violation detection deployed as batch inference via Airflow.",
+    tags: ["NLP", "spaCy", "scikit-learn", "Airflow", "Azure"],
+    imageUrl: "https://images.unsplash.com/photo-1719255418097-acf2f18306ce?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty/Sentiment-Analysis",
+    domain: 'ai'
+  },
+  {
+    title: "Medallion Data Lakehouse",
+    description: "Bronze/Silver/Gold ETL pipelines on S3 — Kafka ingestion, PySpark transforms, Delta Lake storage, dbt + Airflow orchestration, Snowflake analytics.",
+    tags: ["PySpark", "Kafka", "Delta Lake", "Airflow", "dbt", "Snowflake"],
+    imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'data'
   },
   {
     title: "CAPM Portfolio Model",
     description: "CAPM-based trading strategy that turned $10k to $1.09M over 6 years using robust linear modeling.",
     tags: ["Python", "Finance", "CAPM", "Backtesting"],
     imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty/CAPM-Portfolio-Balancing-Model"
+    repoUrl: "https://github.com/16ghosty/CAPM-Portfolio-Balancing-Model",
+    domain: 'data'
   },
   {
-    title: "Predictive Maintenance",
-    description: "ML model forecasting robotic arm failures, reducing downtime 15%.",
-    tags: ["Python", "SageMaker", "Tableau"],
+    title: "Predictive Maintenance Platform",
+    description: "End-to-end ML platform: XGBoost training on Kafka streams, MLflow versioning, SageMaker deployment — 18% stockout reduction, drift-triggered Airflow retraining.",
+    tags: ["XGBoost", "SageMaker", "MLflow", "Airflow", "Docker"],
     imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty/Manufacturing-Classification-Model"
+    repoUrl: "https://github.com/16ghosty/Manufacturing-Classification-Model",
+    domain: 'robotics'
   },
   {
-    title: "Customer Prediction",
-    description: "Gradient Boosting models deployed as scalable microservices.",
-    tags: ["FastAPI", "AWS Lambda", "ECR"],
+    title: "Walmart Robotic Charge Toe Redesign",
+    description: "Root-caused docking failures across 12+ fulfillment sites. SolidWorks redesign + Ansys FEA cut robot downtime 43%; PySpark pipeline processed 500GB+ daily sensor data.",
+    tags: ["SolidWorks", "Ansys FEA", "PySpark", "Apache Kafka", "SQL"],
+    imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'robotics'
+  },
+  {
+    title: "Customer Prediction Service",
+    description: "Gradient Boosting models deployed as scalable microservices with FastAPI, containerized on AWS Lambda + ECR.",
+    tags: ["FastAPI", "AWS Lambda", "ECR", "Python"],
     imageUrl: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty"
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'backend'
   },
   {
-    title: "NLP Policy Detection",
-    description: "94% F1-score pipeline for policy violation detection.",
-    tags: ["NLP", "Airflow", "Azure"],
-    imageUrl: "https://images.unsplash.com/photo-1719255418097-acf2f18306ce?q=80&w=800&auto=format&fit=crop",
-    repoUrl: "https://github.com/16ghosty/Sentiment-Analysis"
+    title: "Formula SAE Vehicle Dynamics System",
+    description: "Designed brakes, suspension, and steering across 2 Formula SAE builds — -60% steering effort, -27% brake heat, -17% lap times. Rack-and-pinion Ackermann geometry + thermal FEA.",
+    tags: ["SolidWorks", "CATIA V5/V6", "Ansys FEA", "FMEA", "Python"],
+    imageUrl: "https://images.unsplash.com/photo-1560724797-bf78e981d20d?q=80&w=800&auto=format&fit=crop",
+    repoUrl: "https://github.com/16ghosty",
+    domain: 'mechanical',
+    videoSrc: '/cad-renders/VehicleDynamics.mp4'
   }
 ];
 
 
 const skillCategories = [
-  { name: "ML & AI", skills: ["TensorFlow", "PyTorch", "Scikit-learn", "LLMs", "NLP"], color: "bg-nb-yellow" },
-  { name: "Languages", skills: ["Python", "R", "SQL", "Go", "Java"], color: "bg-nb-blue" },
-  { name: "Cloud", skills: ["AWS", "Azure", "GCP", "SageMaker", "Lambda"], color: "bg-nb-pink" },
-  { name: "Data", skills: ["Tableau", "Power BI", "Airflow", "Pandas"], color: "bg-nb-green" },
+  { name: "ML & AI", skills: ["PyTorch", "TensorFlow", "XGBoost", "scikit-learn", "MLflow", "SageMaker", "LangChain", "RAG", "spaCy"], color: "bg-nb-yellow" },
+  { name: "Languages", skills: ["Python", "SQL", "Java", "Scala", "TypeScript", "Bash"], color: "bg-nb-blue" },
+  { name: "Data Engineering", skills: ["PySpark", "Apache Kafka", "Airflow", "dbt", "Snowflake", "Delta Lake", "Parquet", "AWS S3", "EMR"], color: "bg-nb-pink" },
+  { name: "Backend & Cloud", skills: ["FastAPI", "REST APIs", "Docker", "AWS Lambda", "ECR", "GitHub Actions", "React", "Claude Code"], color: "bg-nb-green" },
+  { name: "CAD & Engineering", skills: ["SolidWorks", "CATIA V5/V6", "Ansys FEA", "GD&T", "FMEA", "HALT", "Tolerance Stack-Up"], color: "bg-nb-orange" },
 ];
 
 // Hero Section - Original format with decorative artifacts
@@ -138,7 +176,7 @@ const Hero: React.FC = () => (
         {/* Left side - Name and title */}
         <div className="lg:col-span-7">
           <div className="bg-nb-black text-white px-4 py-2 inline-block mb-6 border-4 border-nb-black shadow-brutal">
-            <span className="font-bold tracking-wider">DATA SCIENTIST & ML ENGINEER</span>
+            <span className="font-bold tracking-wider">ML · DATA ENGINEERING · ROBOTICS</span>
           </div>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-nb-black leading-none tracking-tighter">
             GAUTAM<br />
@@ -192,56 +230,102 @@ const Hero: React.FC = () => (
 );
 
 
-// Bento Grid Projects Section
-const ProjectsSection: React.FC = () => (
-  <section className="bg-nb-yellow p-6 md:p-12 border-t-4 border-nb-black">
-    <div className="max-w-7xl mx-auto">
-      <div className="flex items-center gap-4 mb-12">
-        <h2 className="text-4xl md:text-6xl font-bold text-nb-black">PROJECTS</h2>
-        <div className="flex-grow h-1 bg-nb-black"></div>
-        <span className="text-2xl font-bold">05</span>
-      </div>
+// Media helper — uses looping video when available, falls back to image
+const MediaDisplay: React.FC<{ project: Project; className: string }> = ({ project, className }) =>
+  project.videoSrc ? (
+    <video autoPlay loop muted playsInline className={className}>
+      <source src={project.videoSrc} type="video/mp4" />
+    </video>
+  ) : (
+    <img src={project.imageUrl} alt={project.title} className={className} />
+  );
 
-      {/* Bento Grid Layout */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Featured large card */}
-        <a href={projectData[0].repoUrl} target="_blank" className="group md:col-span-2 lg:row-span-2 bg-white border-4 border-nb-black shadow-brutal-lg hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all overflow-hidden">
-          <div className="h-64 lg:h-80 overflow-hidden border-b-4 border-nb-black">
-            <img src={projectData[0].imageUrl} alt={projectData[0].title} className="w-full h-full object-cover" />
-          </div>
-          <div className="p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-nb-green px-3 py-1 border-2 border-nb-black text-sm font-bold">FEATURED</span>
-            </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-nb-black mb-2">{projectData[0].title}</h3>
-            <p className="text-nb-black mb-4">{projectData[0].description}</p>
-            <div className="flex flex-wrap gap-2">
-              {projectData[0].tags.map(tag => (
-                <span key={tag} className="bg-nb-cream px-3 py-1 border-2 border-nb-black text-sm font-bold">{tag}</span>
-              ))}
-            </div>
-          </div>
-        </a>
+// Bento Grid Projects Section with domain filter
+const ProjectsSection: React.FC = () => {
+  const [activeFilter, setActiveFilter] = React.useState<string>('all');
 
-        {/* Smaller cards */}
-        {projectData.slice(1).map((project, i) => (
-          <a key={i} href={project.repoUrl} target="_blank" className={`group bg-white border-4 border-nb-black shadow-brutal hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all overflow-hidden ${i === 1 ? 'lg:col-span-1' : ''}`}>
-            <div className="h-40 overflow-hidden border-b-4 border-nb-black">
-              <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
-            </div>
-            <div className="p-4">
-              <h3 className="text-xl font-bold text-nb-black mb-2">{project.title}</h3>
-              <p className="text-sm text-nb-black mb-3">{project.description}</p>
-              <div className="flex items-center gap-2 text-sm font-bold">
-                <ExternalLinkIcon className="w-4 h-4" /> View →
+  const filterLabels = [
+    { key: 'all', label: 'All' },
+    { key: 'ai', label: 'ML / AI' },
+    { key: 'data', label: 'Data Engineering' },
+    { key: 'backend', label: 'Backend / SWE' },
+    { key: 'robotics', label: 'Robotics' },
+    { key: 'mechanical', label: 'Mechanical' },
+  ];
+
+  const filtered = activeFilter === 'all' ? projectData : projectData.filter(p => p.domain === activeFilter);
+
+  return (
+    <section className="bg-nb-yellow p-6 md:p-12 border-t-4 border-nb-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-4 mb-8">
+          <h2 className="text-4xl md:text-6xl font-bold text-nb-black">PROJECTS</h2>
+          <div className="flex-grow h-1 bg-nb-black"></div>
+          <span className="text-2xl font-bold">{String(filtered.length).padStart(2, '0')}</span>
+        </div>
+
+        {/* Filter bar */}
+        <div className="flex flex-wrap gap-3 mb-8">
+          {filterLabels.map(f => (
+            <button
+              key={f.key}
+              onClick={() => setActiveFilter(f.key)}
+              className={`px-4 py-2 border-4 border-nb-black font-bold text-sm shadow-brutal transition-all hover:shadow-none hover:translate-x-1 hover:translate-y-1 ${
+                activeFilter === f.key ? 'bg-nb-black text-white' : 'bg-white text-nb-black'
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Bento Grid Layout */}
+        {filtered.length === 0 ? (
+          <div className="bg-white border-4 border-nb-black shadow-brutal p-12 text-center">
+            <p className="text-2xl font-bold text-nb-black">No projects in this category yet.</p>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Featured large card */}
+            <a href={filtered[0].repoUrl} target="_blank" className="group md:col-span-2 lg:row-span-2 bg-white border-4 border-nb-black shadow-brutal-lg hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all overflow-hidden">
+              <div className="h-64 lg:h-80 overflow-hidden border-b-4 border-nb-black">
+                <MediaDisplay project={filtered[0]} className="w-full h-full object-cover" />
               </div>
-            </div>
-          </a>
-        ))}
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="bg-nb-green px-3 py-1 border-2 border-nb-black text-sm font-bold">FEATURED</span>
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-nb-black mb-2">{filtered[0].title}</h3>
+                <p className="text-nb-black mb-4">{filtered[0].description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {filtered[0].tags.map(tag => (
+                    <span key={tag} className="bg-nb-cream px-3 py-1 border-2 border-nb-black text-sm font-bold">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </a>
+
+            {/* Smaller cards */}
+            {filtered.slice(1).map((project, i) => (
+              <a key={i} href={project.repoUrl} target="_blank" className="group bg-white border-4 border-nb-black shadow-brutal hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all overflow-hidden">
+                <div className="h-40 overflow-hidden border-b-4 border-nb-black">
+                  <MediaDisplay project={project} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-nb-black mb-2">{project.title}</h3>
+                  <p className="text-sm text-nb-black mb-3">{project.description}</p>
+                  <div className="flex items-center gap-2 text-sm font-bold">
+                    <ExternalLinkIcon className="w-4 h-4" /> View →
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // Experience Section - Horizontal scroll cards
 const ExperienceSection: React.FC = () => (
@@ -293,7 +377,7 @@ const SkillsSection: React.FC = () => (
     <div className="max-w-7xl mx-auto">
       <h2 className="text-4xl md:text-6xl font-bold text-white mb-12">SKILLS</h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((cat, i) => (
           <div key={i} className={`${cat.color} border-4 border-nb-black shadow-brutal p-6`}>
             <h3 className="text-xl font-bold text-nb-black mb-4 border-b-2 border-nb-black pb-2">{cat.name}</h3>

@@ -2,7 +2,6 @@ export interface ContactInfo {
   name: string;
   title: string;
   summary: string;
-  phone: string;
   email: string;
   linkedin: string;
   github: string;
@@ -17,11 +16,13 @@ export interface TimelineItem {
 }
 
 export interface Project {
-  title:string;
+  title: string;
   description: string;
   tags: string[];
   imageUrl: string;
   repoUrl: string;
+  domain: 'ai' | 'data' | 'backend' | 'robotics' | 'mechanical';
+  videoSrc?: string;
 }
 
 export interface Skills {
