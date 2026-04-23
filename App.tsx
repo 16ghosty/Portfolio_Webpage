@@ -155,54 +155,24 @@ const Hero: React.FC = () => (
     <div className="absolute bottom-48 left-52 w-14 h-14 bg-nb-purple border-4 border-nb-black rotate-6 shadow-brutal"></div>
     <div className="absolute top-1/2 right-8 w-12 h-12 bg-nb-orange border-4 border-nb-black -rotate-45 shadow-brutal hidden lg:block"></div>
 
-    {/* Animated flowing skill badges — starburst from behind the right card centre */}
+    {/* Animated skill badges — spawn from behind right card, float up or down past its edge */}
     <style>{`
-      @keyframes burst1 {
-        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        15%  { opacity: 1; }
-        85%  { opacity: 1; }
-        100% { transform: translate(-20px, -180px) rotate(-12deg); opacity: 0; }
-      }
-      @keyframes burst2 {
-        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        15%  { opacity: 1; }
-        85%  { opacity: 1; }
-        100% { transform: translate(60px, -160px) rotate(10deg); opacity: 0; }
-      }
-      @keyframes burst3 {
-        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        15%  { opacity: 1; }
-        85%  { opacity: 1; }
-        100% { transform: translate(-80px, -140px) rotate(15deg); opacity: 0; }
-      }
-      @keyframes burst4 {
-        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        15%  { opacity: 1; }
-        85%  { opacity: 1; }
-        100% { transform: translate(-20px, 180px) rotate(12deg); opacity: 0; }
-      }
-      @keyframes burst5 {
-        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        15%  { opacity: 1; }
-        85%  { opacity: 1; }
-        100% { transform: translate(60px, 160px) rotate(-10deg); opacity: 0; }
-      }
-      @keyframes burst6 {
-        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        15%  { opacity: 1; }
-        85%  { opacity: 1; }
-        100% { transform: translate(-80px, 140px) rotate(-15deg); opacity: 0; }
-      }
-      .flow-skill { animation-timing-function: ease-out; }
+      @keyframes floatUp1   { 0%{transform:translate(0,0) rotate(-8deg);opacity:0} 20%{opacity:1} 70%{opacity:1} 100%{transform:translate(-10px,-240px) rotate(-8deg);opacity:0} }
+      @keyframes floatUp2   { 0%{transform:translate(0,0) rotate(6deg);opacity:0}  20%{opacity:1} 70%{opacity:1} 100%{transform:translate(10px,-240px) rotate(6deg);opacity:0}  }
+      @keyframes floatUp3   { 0%{transform:translate(0,0) rotate(-4deg);opacity:0} 20%{opacity:1} 70%{opacity:1} 100%{transform:translate(-5px,-240px) rotate(-4deg);opacity:0} }
+      @keyframes floatDown1 { 0%{transform:translate(0,0) rotate(8deg);opacity:0}  20%{opacity:1} 70%{opacity:1} 100%{transform:translate(10px,240px) rotate(8deg);opacity:0}   }
+      @keyframes floatDown2 { 0%{transform:translate(0,0) rotate(-6deg);opacity:0} 20%{opacity:1} 70%{opacity:1} 100%{transform:translate(-10px,240px) rotate(-6deg);opacity:0} }
+      @keyframes floatDown3 { 0%{transform:translate(0,0) rotate(4deg);opacity:0}  20%{opacity:1} 70%{opacity:1} 100%{transform:translate(5px,240px) rotate(4deg);opacity:0}    }
+      .flow-skill { animation-timing-function: linear; }
     `}</style>
 
-    {/* All badges spawn from the right card centre and burst outward */}
-    <div className="absolute top-[48%] right-[22%] bg-nb-orange px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst1 4.8s infinite 0s' }}>SageMaker</div>
-    <div className="absolute top-[48%] right-[22%] bg-nb-yellow px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst2 5.3s infinite 0.8s' }}>PySpark</div>
-    <div className="absolute top-[48%] right-[22%] bg-nb-pink px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst3 4.6s infinite 1.6s' }}>LLMs</div>
-    <div className="absolute top-[48%] right-[22%] bg-nb-blue px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst4 5.1s infinite 2.4s' }}>Kafka</div>
-    <div className="absolute top-[48%] right-[22%] bg-nb-green px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst5 4.4s infinite 3.2s' }}>RAG</div>
-    <div className="absolute top-[48%] right-[22%] bg-nb-purple px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst6 5.6s infinite 4.0s' }}>Airflow</div>
+    {/* Badges all start at card centre (z-20 = behind card z-30) and drift straight up or down */}
+    <div className="absolute top-[50%] right-[23%] bg-nb-orange  px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'floatUp1   4s infinite 0s'   }}>SageMaker</div>
+    <div className="absolute top-[50%] right-[23%] bg-nb-yellow  px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'floatDown1 4s infinite 0.7s' }}>PySpark</div>
+    <div className="absolute top-[50%] right-[23%] bg-nb-blue    px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'floatUp2   4s infinite 1.4s' }}>Kafka</div>
+    <div className="absolute top-[50%] right-[23%] bg-nb-green   px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'floatDown2 4s infinite 2.1s' }}>RAG</div>
+    <div className="absolute top-[50%] right-[23%] bg-nb-purple  px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'floatUp3   4s infinite 2.8s' }}>Airflow</div>
+    <div className="absolute top-[50%] right-[23%] bg-nb-pink    px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'floatDown3 4s infinite 3.5s' }}>LLMs</div>
 
 
     {/* Main content */}
