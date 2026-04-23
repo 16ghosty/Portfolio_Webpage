@@ -155,54 +155,54 @@ const Hero: React.FC = () => (
     <div className="absolute bottom-48 left-52 w-14 h-14 bg-nb-purple border-4 border-nb-black rotate-6 shadow-brutal"></div>
     <div className="absolute top-1/2 right-8 w-12 h-12 bg-nb-orange border-4 border-nb-black -rotate-45 shadow-brutal hidden lg:block"></div>
 
-    {/* Animated flowing skill badges — all originate from the right card and fly outward */}
+    {/* Animated flowing skill badges — starburst from behind the right card centre */}
     <style>{`
-      @keyframes flyRight1 {
-        0%   { transform: translate(0, 0) rotate(-5deg); opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translate(160px, -120px) rotate(12deg); opacity: 0; }
+      @keyframes burst1 {
+        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translate(-20px, -180px) rotate(-12deg); opacity: 0; }
       }
-      @keyframes flyRight2 {
-        0%   { transform: translate(0, 0) rotate(4deg); opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translate(200px, 60px) rotate(-8deg); opacity: 0; }
+      @keyframes burst2 {
+        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translate(60px, -160px) rotate(10deg); opacity: 0; }
       }
-      @keyframes flyRight3 {
-        0%   { transform: translate(0, 0) rotate(-8deg); opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translate(120px, 160px) rotate(18deg); opacity: 0; }
+      @keyframes burst3 {
+        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translate(-80px, -140px) rotate(15deg); opacity: 0; }
       }
-      @keyframes flyRight4 {
-        0%   { transform: translate(0, 0) rotate(6deg); opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translate(180px, -60px) rotate(-14deg); opacity: 0; }
+      @keyframes burst4 {
+        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translate(-20px, 180px) rotate(12deg); opacity: 0; }
       }
-      @keyframes flyRight5 {
-        0%   { transform: translate(0, 0) rotate(-3deg); opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translate(140px, 100px) rotate(20deg); opacity: 0; }
+      @keyframes burst5 {
+        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translate(60px, 160px) rotate(-10deg); opacity: 0; }
       }
-      @keyframes flyRight6 {
-        0%   { transform: translate(0, 0) rotate(10deg); opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translate(220px, -30px) rotate(-18deg); opacity: 0; }
+      @keyframes burst6 {
+        0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translate(-80px, 140px) rotate(-15deg); opacity: 0; }
       }
-      .flow-skill { animation-iteration-count: infinite; animation-timing-function: ease-out; }
+      .flow-skill { animation-timing-function: ease-out; }
     `}</style>
 
-    {/* Skills flying out from behind the right card */}
-    <div className="absolute top-[32%] right-[36%] bg-nb-orange px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight1 4.8s infinite 0s' }}>SageMaker</div>
-    <div className="absolute top-[40%] right-[38%] bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight2 5.3s infinite 0.7s' }}>PySpark</div>
-    <div className="absolute top-[48%] right-[35%] bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight3 4.6s infinite 1.4s' }}>LLMs</div>
-    <div className="absolute top-[36%] right-[40%] bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight4 5.1s infinite 2.1s' }}>Kafka</div>
-    <div className="absolute top-[44%] right-[37%] bg-nb-green px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight5 4.4s infinite 2.8s' }}>RAG</div>
-    <div className="absolute top-[52%] right-[39%] bg-nb-purple px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight6 5.6s infinite 3.5s' }}>Airflow</div>
+    {/* All badges spawn from the right card centre and burst outward */}
+    <div className="absolute top-[48%] right-[22%] bg-nb-orange px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst1 4.8s infinite 0s' }}>SageMaker</div>
+    <div className="absolute top-[48%] right-[22%] bg-nb-yellow px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst2 5.3s infinite 0.8s' }}>PySpark</div>
+    <div className="absolute top-[48%] right-[22%] bg-nb-pink px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst3 4.6s infinite 1.6s' }}>LLMs</div>
+    <div className="absolute top-[48%] right-[22%] bg-nb-blue px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst4 5.1s infinite 2.4s' }}>Kafka</div>
+    <div className="absolute top-[48%] right-[22%] bg-nb-green px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst5 4.4s infinite 3.2s' }}>RAG</div>
+    <div className="absolute top-[48%] right-[22%] bg-nb-purple px-3 py-1 border-4 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill z-20" style={{ animation: 'burst6 5.6s infinite 4.0s' }}>Airflow</div>
 
 
     {/* Main content */}
@@ -239,7 +239,7 @@ const Hero: React.FC = () => (
         </div>
 
         {/* Right side - Description card */}
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5 relative z-30">
           <div className="bg-nb-pink border-4 border-nb-black shadow-brutal-lg p-8 transform lg:rotate-2 hover:rotate-0 transition-transform">
             <p className="text-xl text-nb-black font-medium leading-relaxed">{contactData.summary}</p>
 
