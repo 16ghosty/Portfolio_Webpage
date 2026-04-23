@@ -5,7 +5,7 @@ import { MailIcon, LinkedInIcon, GithubIcon, ExternalLinkIcon } from './componen
 const contactData: ContactInfo = {
   name: "Gautam Marathe",
   title: "Data Engineer · ML Engineer · Mechanical Engineering",
-  summary: "From PySpark pipelines on AWS to SolidWorks FEA validation — end-to-end ML, data engineering, and robotics hardware across finance, fulfillment robotics, and industrial automation.",
+  summary: "PySpark pipelines, Kafka, SageMaker, LangChain — built by someone who's also done FEA validation, Formula SAE builds, and factory floor manufacturing.",
   email: "gautammarathe11@gmail.com",
   linkedin: "https://linkedin.com/in/gautammarathe/",
   github: "https://github.com/16ghosty"
@@ -224,6 +224,11 @@ const Hero: React.FC = () => (
             <span className="text-stroke">MARATHE</span>
           </h1>
           <style>{`.text-stroke { -webkit-text-stroke: 4px black; -webkit-text-fill-color: transparent; }`}</style>
+
+          <div className="mt-6">
+            <p className="text-2xl md:text-3xl font-bold text-nb-black leading-tight">I build software that understands hardware.</p>
+            <p className="text-lg text-nb-black mt-2 font-medium opacity-80">Grounded in years of mechanical design and manufacturing — elevated by modern ML and data engineering.</p>
+          </div>
 
           {/* CTA buttons below name */}
           <div className="flex flex-wrap gap-3 mt-8">
