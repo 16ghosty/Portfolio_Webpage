@@ -155,60 +155,54 @@ const Hero: React.FC = () => (
     <div className="absolute bottom-48 left-52 w-14 h-14 bg-nb-purple border-4 border-nb-black rotate-6 shadow-brutal"></div>
     <div className="absolute top-1/2 right-8 w-12 h-12 bg-nb-orange border-4 border-nb-black -rotate-45 shadow-brutal hidden lg:block"></div>
 
-    {/* Animated flowing skill badges */}
+    {/* Animated flowing skill badges — all originate from the right card and fly outward */}
     <style>{`
-      @keyframes flowOut1 { 
-        0% { transform: translate(0, 0) rotate(-5deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translate(-200px, -150px) rotate(15deg); opacity: 0; }
+      @keyframes flyRight1 {
+        0%   { transform: translate(0, 0) rotate(-5deg); opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { transform: translate(160px, -120px) rotate(12deg); opacity: 0; }
       }
-      @keyframes flowOut2 { 
-        0% { transform: translate(0, 0) rotate(5deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translate(-250px, 100px) rotate(-10deg); opacity: 0; }
+      @keyframes flyRight2 {
+        0%   { transform: translate(0, 0) rotate(4deg); opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { transform: translate(200px, 60px) rotate(-8deg); opacity: 0; }
       }
-      @keyframes flowOut3 { 
-        0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translate(200px, -200px) rotate(20deg); opacity: 0; }
+      @keyframes flyRight3 {
+        0%   { transform: translate(0, 0) rotate(-8deg); opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { transform: translate(120px, 160px) rotate(18deg); opacity: 0; }
       }
-      @keyframes flowOut4 { 
-        0% { transform: translate(0, 0) rotate(-3deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translate(180px, 150px) rotate(-15deg); opacity: 0; }
+      @keyframes flyRight4 {
+        0%   { transform: translate(0, 0) rotate(6deg); opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { transform: translate(180px, -60px) rotate(-14deg); opacity: 0; }
       }
-      @keyframes flowOut5 { 
-        0% { transform: translate(0, 0) rotate(8deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translate(-150px, 200px) rotate(25deg); opacity: 0; }
+      @keyframes flyRight5 {
+        0%   { transform: translate(0, 0) rotate(-3deg); opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { transform: translate(140px, 100px) rotate(20deg); opacity: 0; }
       }
-      @keyframes flowOut6 { 
-        0% { transform: translate(0, 0) rotate(-10deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translate(250px, -100px) rotate(-20deg); opacity: 0; }
+      @keyframes flyRight6 {
+        0%   { transform: translate(0, 0) rotate(10deg); opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { transform: translate(220px, -30px) rotate(-18deg); opacity: 0; }
       }
       .flow-skill { animation-iteration-count: infinite; animation-timing-function: ease-out; }
     `}</style>
 
-    {/* Skills flowing from title area */}
-    <div className="absolute top-[35%] left-[20%] bg-nb-black text-white px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut1 4s infinite' }}>Python</div>
-    <div className="absolute top-[40%] left-[25%] bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut2 5s infinite 0.5s' }}>AWS</div>
-    <div className="absolute top-[35%] left-[30%] bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut3 4.5s infinite 1s' }}>TensorFlow</div>
-    <div className="absolute top-[45%] left-[22%] bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut4 5.5s infinite 1.5s' }}>SQL</div>
-    <div className="absolute top-[38%] left-[28%] bg-nb-green px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut5 4.2s infinite 2s' }}>PyTorch</div>
-    <div className="absolute top-[42%] left-[18%] bg-nb-purple px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut6 5.2s infinite 2.5s' }}>NLP</div>
-
-    {/* Skills flowing from card area */}
-    <div className="absolute top-[35%] right-[15%] bg-nb-orange px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut3 4.8s infinite 0.3s' }}>ML</div>
-    <div className="absolute top-[42%] right-[20%] bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut4 5.3s infinite 0.8s' }}>Docker</div>
-    <div className="absolute top-[38%] right-[12%] bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut1 4.6s infinite 1.3s' }}>LLMs</div>
-    <div className="absolute top-[45%] right-[18%] bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flowOut2 5.1s infinite 1.8s' }}>RAG</div>
+    {/* Skills flying out from behind the right card */}
+    <div className="absolute top-[32%] right-[36%] bg-nb-orange px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight1 4.8s infinite 0s' }}>SageMaker</div>
+    <div className="absolute top-[40%] right-[38%] bg-nb-yellow px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight2 5.3s infinite 0.7s' }}>PySpark</div>
+    <div className="absolute top-[48%] right-[35%] bg-nb-pink px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight3 4.6s infinite 1.4s' }}>LLMs</div>
+    <div className="absolute top-[36%] right-[40%] bg-nb-blue px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight4 5.1s infinite 2.1s' }}>Kafka</div>
+    <div className="absolute top-[44%] right-[37%] bg-nb-green px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight5 4.4s infinite 2.8s' }}>RAG</div>
+    <div className="absolute top-[52%] right-[39%] bg-nb-purple px-3 py-1 border-3 border-nb-black font-bold text-sm shadow-brutal hidden lg:block flow-skill" style={{ animation: 'flyRight6 5.6s infinite 3.5s' }}>Airflow</div>
 
 
     {/* Main content */}
